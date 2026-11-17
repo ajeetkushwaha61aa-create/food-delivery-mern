@@ -10,6 +10,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique:true
+        
     },
     password:{
         type: String,
@@ -48,7 +49,7 @@ coordinates:{type:[Number],default:[0,0]}
   
 }, { timestamps: true })
 
-userSchema.index({location:'2dsphere'})
+ userSchema.index({location:'2dsphere'})
 
 
 const User=mongoose.model("User",userSchema)

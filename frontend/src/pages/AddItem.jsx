@@ -12,7 +12,7 @@ import { ClipLoader } from 'react-spinners';
 function AddItem() {
     const navigate = useNavigate()
     const { myShopData } = useSelector(state => state.owner)
-    const [loading,setLoading]=useState(false)
+    const [loading, setLoading] = useState(false)
     const [name, setName] = useState("")
     const [price, setPrice] = useState(0)
     const [frontendImage, setFrontendImage] = useState(null)
@@ -42,8 +42,8 @@ function AddItem() {
         setLoading(true)
         try {
             const formData = new FormData()
-            formData.append("name",name)
-            formData.append("category",category)
+            formData.append("name", name)
+            formData.append("category", category)
             formData.append("foodType", foodType)
             formData.append("price", price)
             if (backendImage) {
@@ -51,8 +51,8 @@ function AddItem() {
             }
             const result = await axios.post(`${serverUrl}/api/item/add-item`, formData, { withCredentials: true })
             dispatch(setMyShopData(result.data))
-           setLoading(false)
-           navigate("/")
+            setLoading(false)
+            navigate("/")
         } catch (error) {
             console.log(error)
             setLoading(false)
@@ -118,7 +118,7 @@ function AddItem() {
 
                         >
                             <option value="veg" >veg</option>
- <option value="non veg" >non veg</option>
+                            <option value="non veg" >non veg</option>
 
 
 
@@ -127,7 +127,7 @@ function AddItem() {
                     </div>
 
                     <button className='w-full bg-[#ff4d2d] text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-orange-600 hover:shadow-lg transition-all duration-200 cursor-pointer' disabled={loading}>
-                      {loading?<ClipLoader size={20} color='white' />:"Save"}
+                        {loading ? <ClipLoader size={20} color='white' /> : "Save"}
                     </button>
                 </form>
             </div>
