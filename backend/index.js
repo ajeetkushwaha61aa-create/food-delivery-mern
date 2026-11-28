@@ -17,9 +17,9 @@ import { socketHandler } from "./socket.js"
 const app=express()
 const server=http.createServer(app)
 
-const allowedOrigins = [
+ const allowedOrigins = [
   "http://localhost:5173",
-  "https://food-delivery-mern-jg2nt2a-ajit-projects1.vercel.app"
+  "https://food-delivery-mern-o64rebn7s-ajit-projects1.vercel.app"
 ];
  
 const io=new Server(server,{
