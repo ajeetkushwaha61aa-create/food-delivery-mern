@@ -18,10 +18,9 @@ const app=express()
 const server=http.createServer(app)
 
  const allowedOrigins = [
-  "http://localhost:5173",
-  "https://food-delivery-mern-ochre.vercel.app"
+    "http://localhost:5173",
+    "https://food-delivery-mern-fnnhlp6wk-ajit-projects1.vercel.app"
 ];
- 
  
 const io=new Server(server,{
    cors:{
